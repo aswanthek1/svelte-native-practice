@@ -1,6 +1,9 @@
 <script lang="ts">
-</script>
+    import Header from "~/Header.svelte";
 
+</script>
+<page>
+    <Header title="Home" />
     <stackLayout>
             <scrollView orientation="vertical">
                 <stackLayout paddingLeft="10" paddingRight="10">
@@ -49,8 +52,7 @@
                 </stackLayout>
             </scrollView>
         </stackLayout>
-
-
+    </page>
 
 <style>
     /* .info .fas {

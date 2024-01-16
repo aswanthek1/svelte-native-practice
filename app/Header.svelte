@@ -4,5 +4,5 @@
 
 <script lang="ts" >
     import {toggleDrawer} from './Nav'
-    let title:string = 'kkkk'
+    export let title:string = ''
 </script>

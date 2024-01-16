@@ -3,9 +3,9 @@
   import Home from "./components/Home.svelte";
   import { navigate } from "svelte-native";
   import CameraScreen from "./components/Camera.svelte";
-  import Header from "./Header.svelte";
   import * as nav from './Nav'
-    import { onMount } from "svelte";
+  import { onMount } from "svelte";
+    import TodoApi from "./components/TodoApi.svelte";
 
  export let drawer;
 
@@ -14,8 +14,8 @@
  })
 
   function close(page) {
-      navigate({ page });
     drawer.closeDrawer();
+      navigate({ page });
   }
 
   const closeDrawer = () => drawer.closeDrawer();
@@ -30,19 +30,15 @@
         <label class="side_bar_heading" text="X" on:tap={closeDrawer} />
       </flexboxLayout>
       <stackLayout class="links_container" >
-        <label on:tap={() => close(CameraScreen)} class="side_menu" text="Camera" />
+          <label on:tap={() => close(Home)} class="side_menu" text="Home" />
+          <label on:tap={() => close(CameraScreen)} class="side_menu" text="Camera" />
+          <label on:tap={() => close(TodoApi)} class="side_menu" text="Todo Api" />
       </stackLayout>
     </stackLayout>
   </radSideDrawer.drawerContent>
   <radSideDrawer.mainContent>
-    <frame>
-        <page>
-          <!-- <actionBar class="action_bar">
-            <label text="Nav" on:tap={() => drawer.toggleDrawerState()} />
-          </actionBar> -->
-          <Header title="Home" />
+    <frame backgroundColor="white">
         <Home />
-      </page>
     </frame>
   </radSideDrawer.mainContent>
 </radSideDrawer>
@@ -56,12 +52,13 @@
   }
 
   .side_menu {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 400;
+    margin-top: 40px;
   }
 
   .links_container {
-    margin-top: 55px;
+    margin-top: 75px;
     margin-left: 20px;
     margin-bottom: 20px;
   }
