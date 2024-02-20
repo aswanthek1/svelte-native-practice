@@ -5,7 +5,8 @@
   import CameraScreen from "./components/Camera.svelte";
   import * as nav from './Nav'
   import { onMount } from "svelte";
-    import TodoApi from "./components/TodoApi.svelte";
+  import TodoApi from "./components/TodoApi.svelte";
+    import Form from "./components/Form.svelte";
 
  export let drawer;
 
@@ -33,6 +34,7 @@
           <label on:tap={() => close(Home)} class="side_menu" text="Home" />
           <label on:tap={() => close(CameraScreen)} class="side_menu" text="Camera" />
           <label on:tap={() => close(TodoApi)} class="side_menu" text="Todo Api" />
+          <label on:tap={() => close(Form)} class="side_menu" text="Form" />
       </stackLayout>
     </stackLayout>
   </radSideDrawer.drawerContent>
